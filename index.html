@@ -39,7 +39,7 @@
   <p class="description">把下方按鈕拖拉到書籤列，即可快速在 Facebook 貼文中使用：</p>
 
   <h2>🔽 展開所有留言</h2>
-  <a class="bookmarklet" href="javascript:(function(){const b='查看更多留言';let c=0,m=0;let p=document.createElement('div');Object.assign(p.style,{position:'fixed',top:'10px',right:'10px',background:'#000',color:'#0f0',padding:'10px',zIndex:'99999',fontFamily:'monospace',borderRadius:'6px',fontSize:'14px'});p.textContent='開始展開留言...';document.body.appendChild(p);const t=setInterval(()=>{let a=Array.from(document.querySelectorAll('span')).filter(e=>e.innerText.includes(b));if(a.length===0){if(m===c){p.textContent='所有留言已展開完畢';clearInterval(t);setTimeout(()=>p.remove(),3000);}else{m=c;}}else{c+=a.length);a.forEach(e=>e.click());p.textContent=`展開中... 已點擊 ${c} 次`;}} ,1000);})();">自動展開臉書留言</a>
+  <a class="bookmarklet" href="javascript:(function(){const b='查看更多留言';let c=0,m=0;let p=document.createElement('div');Object.assign(p.style,{position:'fixed',top:'10px',right:'10px',background:'#000',color:'#0f0',padding:'10px',zIndex:'99999',fontFamily:'monospace',borderRadius:'6px',fontSize:'14px'});p.textContent='開始展開留言...';document.body.appendChild(p);const t=setInterval(()=>{let a=Array.from(document.querySelectorAll('span')).filter(e=>e.innerText.includes(b));if(a.length===0){if(m===c){p.textContent='所有留言已展開完畢';clearInterval(t);setTimeout(()=>p.remove(),3000);}else{m=c;}}else{c+=a.length;a.forEach(e=>e.click());p.textContent=`展開中... 已點擊 ${c} 次`;}} ,1000);})();">自動展開臉書留言</a>
   <p>自動點擊「查看更多留言」直到全部展開，右上角會顯示進度。(按住上方並拖拉至書籤頁以建立書籤小工具)</p>
 
   <h2>🔽 讓留言區的「讚」可以被複製</h2>
