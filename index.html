@@ -46,7 +46,7 @@
   <a class="bookmarklet" href="javascript:(function(){document.querySelectorAll('*').forEach(el=>{el.style.userSelect='text'});alert('現在可以複製留言裡的「讚」了！');})();">讓「讚」能被複製</a>
   <p>解除 Facebook 對留言中按鈕（如「讚」）的選取限制，方便複製。(按住上方並拖拉至書籤頁以建立書籤小工具)</p>
 
-  <h2>🔽 一鍵解鎖讚 + 展開留言 + 選取複製</h2>
+  <h2>🔽 一鍵解鎖讚 + 展開留言 + 選取</h2>
   <a class="bookmarklet" href="javascript:(function(){const MORE_TEXT='查看更多留言';let clickCount=0;document.querySelectorAll('*').forEach(el=>{el.style.userSelect='text'});const panel=document.createElement('div');Object.assign(panel.style,{position:'fixed',top:'10px',right:'10px',background:'#000',color:'#0f0',padding:'10px',zIndex:'99999',fontFamily:'monospace',borderRadius:'6px',fontSize:'14px'});panel.textContent='🔓 已解除複製限制，開始展開留言...';document.body.appendChild(panel);const timer=setInterval(()=>{const buttons=Array.from(document.querySelectorAll('span')).filter(el=>el.innerText.includes(MORE_TEXT));if(buttons.length>0){buttons.forEach(btn=>btn.click());clickCount+=buttons.length;panel.textContent=`🔄 展開中... 已點擊 ${clickCount} 次`;}else{clearInterval(timer);panel.textContent='📄 正在選取留言內容...';setTimeout(()=>{const container=Array.from(document.querySelectorAll('div')).find(el=>el.querySelector('h2')?.innerText==='留言');if(container){const range=document.createRange();range.selectNodeContents(container);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);panel.textContent='✅ 已選取留言內容，請按 Ctrl+C 複製（或右鍵→複製）';}else{panel.textContent='⚠️ 找不到留言區';}setTimeout(()=>panel.remove(),8000);},1000);}},1000);})();">一鍵選取所有留言</a>
   <p>這個書籤會同時解除「讚」無法複製的限制、自動展開所有留言，並自動反白留言區，讓你只需按下 Ctrl+C 即可複製。</p>
 
