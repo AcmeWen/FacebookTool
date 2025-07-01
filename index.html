@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>溫馬迷的 Facebook 書籤工具</title>
+  <title>溫馬迷的 Facebook 書籤小工具</title>
   <style>
     body {
       font-family: sans-serif;
@@ -52,7 +52,7 @@
   <br>
   <br>
   
-  <h2>🔽 一鍵展開留言 + 解鎖讚 + 選取複製</h2>
+  <h2>🔽 一鍵展開留言 + 解鎖讚 + 選取</h2>
   <a class="bookmarklet" href="javascript:(function(){const MORE_TEXT='查看更多留言';let clickCount=0;const panel=document.createElement('div');Object.assign(panel.style,{position:'fixed',top:'10px',right:'10px',background:'#000',color:'#0f0',padding:'10px',zIndex:'99999',fontFamily:'monospace',borderRadius:'6px',fontSize:'14px'});panel.textContent='🔄 開始展開留言...';document.body.appendChild(panel);const timer=setInterval(()=>{const buttons=Array.from(document.querySelectorAll('span')).filter(el=>el.innerText.includes(MORE_TEXT));if(buttons.length>0){buttons.forEach(btn=>btn.click());clickCount+=buttons.length;panel.textContent=`🔄 展開中... 已點擊 ${clickCount} 次`;}else{clearInterval(timer);panel.textContent='🔓 解鎖留言中...';setTimeout(()=>{document.querySelectorAll('*').forEach(el=>{el.style.userSelect='text'});panel.textContent='📄 正在選取留言內容...';const container=Array.from(document.querySelectorAll('div')).find(el=>el.querySelector('h2')?.innerText==='留言');if(container){const range=document.createRange();range.selectNodeContents(container);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);panel.textContent='✅ 已選取留言內容，請按 Ctrl+C 複製';}else{panel.textContent='⚠️ 找不到留言區';}setTimeout(()=>panel.remove(),8000);},1000);}},1000);})();">一鍵選取所有留言</a>
   <p>這個書籤小工具會：先展開所有留言 → 再解除留言中「讚」的複製限制 → 自動選取整個留言區。你只要按 Ctrl+C 就能複製所有內容。</p>
 
@@ -60,6 +60,6 @@
   <br>
   
   <hr>
-  <p style="font-size: 13px; color: #888;">Made for helping friends use Facebook more easily. Drag & drop buttons to bookmarks bar and enjoy.</p>
+  <p style="font-size: 13px; color: #888;">Made for helping friends use Facebook more easily. Drag & drop buttons to the bookmarks bar and enjoy.</p>
 </body>
 </html>
